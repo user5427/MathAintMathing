@@ -1,7 +1,7 @@
 from random import random, randint
 # 4 task
-seats = 40
-watchers = 5
+seats = 5
+watchers = 2
 
 attempts = 0
 equal = 0
