@@ -1,81 +1,50 @@
-# task 1.2
-
-# 1.2 task
-
-students = 6
-tasks = 12
-sameTasks = 3
-
-def shiftOccupation(seats, watchers):
-    if watchers == []:
-        return []
-
-    lastWatcher = watchers[-1]
-    if lastWatcher >= seats-1:
-        backwardsShift = shiftOccupation(seats, watchers[:-1])
-        if backwardsShift == []:
-            return []
-        backwardsShift.append(0)
-        return backwardsShift
-    else:
-        watchers[-1] += 1
-        return watchers
+from random import random, randint
+# 5 task
 
 
-attempts = 0
+# array of chars
+
+k = 12
+m = 14
+n = 10
+
+testArray = []
+
+# fill array with 'k' characters
+for i in range(0, k):
+    testArray.append('k')
+
+# fill array with 'm' characters
+for i in range(0, m):
+    testArray.append('m')
+
+# fill array with 'n' characters
+for i in range(0, n):
+    testArray.append('n')
+
+# shuffle the array
+for i in range(0, len(testArray)):
+    randomIndex = randint(0, len(testArray)-1)
+    temp = testArray[i]
+    testArray[i] = testArray[randomIndex]
+    testArray[randomIndex] = temp
+
+
+attempts = 1000000
 equal = 0
-newWayEqual = 0
 
-isFinished = False
-watcherPozitions = []
-for i in range(0, students):
-    watcherPozitions.append(0)
-while not isFinished:
-    print(watcherPozitions)
+for i in range(0, attempts):
+    twoChars = []
+    copy = testArray.copy()
+    # choose two random characters from the array
+    first = randint(0, len(testArray)-1)
+    twoChars.append(testArray[first])
+    copy.pop(first)
+    twoChars.append(copy[randint(0, len(testArray)-2)])
 
-    attempts += 1
-    tempEqual = 0
+    # if the two characters are the same, increment the counter
+    if twoChars[0] == twoChars[1]:
+        equal += 1
 
-    foundTasks = []
-    foundTaskCount = []
-    for j in range (0, students):
-        if watcherPozitions[j] in foundTasks:
-            foundTaskCount[foundTasks.index(watcherPozitions[j])] += 1
-        else:
-            foundTasks.append(watcherPozitions[j])
-            foundTaskCount.append(1)
+print(equal/attempts)
 
-
-    totalCommonTasks = 0
-    for j in range(0, len(foundTasks)):
-        if foundTaskCount[j] >= 2:
-            totalCommonTasks += foundTaskCount[j]
-
-    print("Total common tasks: " + str(totalCommonTasks))
-    # for j in range(0, len(foundTasks)):
-    #     if foundTaskCount[j] >= sameTasks:
-    #         # print(foundTasks)
-    #         # print(foundTaskCount)
-    #         equal += 1
-    #         break
-
-    if totalCommonTasks >= sameTasks:
-        # print(foundTasks)
-        # print(foundTaskCount)
-        newWayEqual += 1
-
-    watcherPozitions = shiftOccupation(tasks, watcherPozitions)
-    if watcherPozitions == []:
-        break
-
-# print(equal/attempts)
-# print(1.0 - equal/attempts)
-# print(equal)
-
-print(newWayEqual/attempts)
-print(1.0 - newWayEqual/attempts)
-print(newWayEqual)
-print(attempts - newWayEqual)
-
-
-print(attempts)

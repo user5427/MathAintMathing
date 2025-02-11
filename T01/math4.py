@@ -1,81 +1,76 @@
 from random import random, randint
-
-# 2 task
-houses = 8
-phonesPerHouse = 4
-phones = houses * phonesPerHouse
-calls = 4
+# 4 task
+seats = 5
+watchers = 2
 
 attempts = 0
 equal = 0
-notDemasked = 0
 
-demaskedAtExact = 0
+# occupation = []
+# for i in range(0, seats):
+#     occupation.append(0)
+#
+# for i in range(0, watchers):
+#     occupation[i] = watchers - i
+#
+# print(occupation)
 
-def shiftOccupation(phones, calls):
-    if calls == []:
+
+def shiftOccupation(seats, watchers):
+    if watchers == []:
         return []
 
-    lastWatcher = calls[-1]
-    if lastWatcher >= phones - 1:
-        backwardsShift = shiftOccupation(phones - 1, calls[:-1])
+    lastWatcher = watchers[-1]
+    if lastWatcher >= seats-1:
+        backwardsShift = shiftOccupation(seats-1, watchers[:-1])
         if backwardsShift == []:
             return []
         backwardsShift.append(backwardsShift[-1] + 1)
         return backwardsShift
     else:
-        calls[-1] += 1
-        return calls
+        watchers[-1] += 1
+        return watchers
 
-homNum = []
-for i in range(0, houses):
-    homNum.append(0)
+
+
 
 isFinished = False
-phoneCalls = []
-for i in range(0, calls):
-    phoneCalls.append(i)
+watcherPozitions = []
+for i in range(0, watchers):
+    watcherPozitions.append(i)
 while not isFinished:
-    print(phoneCalls)
+    print(watcherPozitions)
 
     attempts += 1
-    homesCalled = []
-    for j in range(0, houses):
-        homesCalled.append(0)
-    for j in range(0, calls):
-        homesCalled[phoneCalls[j] // phonesPerHouse] += 1
-
-    for j in range(0, houses):
-        if homesCalled[j] >= 2:
-            homNum[j] += 1
-
-    notDem = False
-    for j in range(0, houses):
-        if homesCalled[j] >= 2:
+    for j in range(0, watchers - 1):
+        if watcherPozitions[j] == watcherPozitions[j+1]-1 or watcherPozitions[j] == watcherPozitions[j+1]+1:
             equal += 1
-            notDem = True
             break
 
-    # check if that house has been called at least 2 times
-    if homesCalled[phoneCalls[calls - 1] // phonesPerHouse] >= 2:
-        demaskedAtExact += 1
-
-    if not notDem:
-        notDemasked += 1
-
-    phoneCalls = shiftOccupation(phones, phoneCalls)
-    if phoneCalls == []:
+    watcherPozitions = shiftOccupation(seats, watcherPozitions)
+    if watcherPozitions == []:
         break
 
-print(equal / attempts) #demaskuotas
-print(1.0 - equal / attempts) # NEdemaskuotas
-print(notDemasked / attempts) # nedemaskuotas
 
-print (equal)
-print (notDemasked)
-print( attempts)
 
-print(demaskedAtExact / attempts)
-print(demaskedAtExact)
-
-# print(homNum)
+#
+# for i in range(0, attempts):
+#     # occupy the seats randomly with watchers
+#     occupiedSeats = []
+#     for j in range(0, watchers):
+#         seat = randint(0, seats-1)
+#         while seat in occupiedSeats:
+#             seat = randint(0, seats-1)
+#
+#         occupiedSeats.append(seat)
+#
+#     # print(occupiedSeats)
+#
+#     # if two watchers are sitting in the same seat, increment the counter
+#     for j in range(0, watchers-1):
+#         if occupiedSeats[j] == occupiedSeats[j+1]-1 or occupiedSeats[j] == occupiedSeats[j+1]+1:
+#             equal += 1
+#             break
+#
+print(equal/attempts)
+print(1.0 - equal/attempts)

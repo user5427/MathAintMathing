@@ -1,4 +1,4 @@
-import math
+import math5
 
 # Parametrai
 N = 12  # uždavinių skaičius
