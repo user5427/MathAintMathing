@@ -1,7 +1,7 @@
 from random import random, randint
 
 from My_Probability.combinations import C_Cycle
-from My_Probability.staticCalculation import C
+from My_Probability.static_calculation import C
 
 # 5 task
 

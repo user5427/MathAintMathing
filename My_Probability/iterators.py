@@ -1,4 +1,4 @@
-from My_Probability.staticCalculation import Repeatable
+from My_Probability.static_calculation import Repeatable
 
 
 # cycle through all C n k combinations
