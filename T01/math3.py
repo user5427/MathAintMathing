@@ -1,7 +1,7 @@
 # 3 task
 
-walls = 4
-colors = 3
+walls = 8
+colors = 4
 equalColorWallCount = 4
 
 

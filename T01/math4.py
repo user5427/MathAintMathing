@@ -10,6 +10,8 @@ attempts = 0
 equal = 0
 notDemasked = 0
 
+demaskedAtExact = 0
+
 def shiftOccupation(phones, calls):
     if calls == []:
         return []
@@ -54,6 +56,10 @@ while not isFinished:
             notDem = True
             break
 
+    # check if that house has been called at least 2 times
+    if homesCalled[phoneCalls[calls - 1] // phonesPerHouse] >= 2:
+        demaskedAtExact += 1
+
     if not notDem:
         notDemasked += 1
 
@@ -69,4 +75,7 @@ print (equal)
 print (notDemasked)
 print( attempts)
 
-print(homNum)
+print(demaskedAtExact / attempts)
+print(demaskedAtExact)
+
+# print(homNum)

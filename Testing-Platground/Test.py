@@ -1,4 +1,4 @@
-from My_Probability.combinations import C_Cycle, A_Cycle
+from My_Probability.combinations import C_Cycle, Repeatable_Cycle
 
 
 # list[i] == list[i+1]
@@ -8,5 +8,8 @@ def condition(list):
             return True
     return False
 
-print(A_Cycle(5, 3, condition, True))
+print(Repeatable_Cycle(5, 3, condition, True))
 print(C_Cycle(5, 3, condition, True))
+
+
+
