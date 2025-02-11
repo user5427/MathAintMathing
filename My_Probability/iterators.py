@@ -53,7 +53,7 @@ def A_iterator(n, k):
 def Repeatable_iterator(n, k):
     list = []
     for i in range(0, k):
-        list.append(0)
+        list.append(0+1)
 
     total = 0
     while True:
@@ -64,11 +64,11 @@ def Repeatable_iterator(n, k):
             break
 
         # increment the last element if possible, otherwise increment the previous element, and so on
-        if list[k - 1] + 1 >= n:
+        if list[k - 1] + 1 > n:
             checkingPosition = 0
             while checkingPosition < k:
-                if list[k - checkingPosition - 1] + 1 >= n and k - checkingPosition - 1 != 0:
-                    list[k - checkingPosition - 1] = 0
+                if list[k - checkingPosition - 1] + 1 > n and k - checkingPosition - 1 != 0:
+                    list[k - checkingPosition - 1] = 1
                     checkingPosition += 1
                 else:
                     list[k - checkingPosition - 1] += 1

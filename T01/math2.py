@@ -56,8 +56,8 @@ while not isFinished:
             notDem = True
             break
 
-    # check if that house has been called at least 2 times
-    if homesCalled[phoneCalls[calls - 1] // phonesPerHouse] >= 2:
+    # check if that house has been called exactly 2 times
+    if homesCalled[phoneCalls[calls - 1] // phonesPerHouse] == 2:
         demaskedAtExact += 1
 
     if not notDem:
