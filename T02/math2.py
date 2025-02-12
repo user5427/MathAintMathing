@@ -1,28 +1,36 @@
-# width in cm
+from math import ceil
+
 from My_Probability.combinations import Checker
 from My_Probability.multiplier import Repeatable_Cycler
 from My_Probability.static_calculation import Repeatable
 
-accuracy = 15
+aSendingTime = 16
+bSendingTime = 19
+gSendingTime = 11
 
-width = 100 * accuracy
-turtleWidth = 11 * accuracy
+turningOnTime = 7
 
-choises = width - turtleWidth + 1
 
-# we have two turtles
+def findTimes(list):
+    time = list[0]
 
-def turtleCollision(list):
-    if (list[0] + turtleWidth) >= list[1] and list[0] <= (list[1] + turtleWidth):
+    timeToA = (time // aSendingTime + (1 if time % aSendingTime > 0 else 0)) * aSendingTime - time
+    timeToB = (time // bSendingTime + (1 if time % bSendingTime > 0 else 0)) * bSendingTime - time
+    timeToG = (time // gSendingTime + (1 if time % gSendingTime > 0 else 0)) * gSendingTime - time
+
+    if timeToA <= turningOnTime or timeToB <= turningOnTime or timeToG <= turningOnTime:
+        print(time, timeToA, timeToB, timeToG)
         return True
     else:
         return False
 
-r_cycle = Repeatable_Cycler(choises, 2)
-total = Repeatable(choises, 2)
-found = Checker(r_cycle, turtleCollision, True)
+time = 200
+repeatable = Repeatable_Cycler(time, 1)
+total = Repeatable(time, 1)
+found = Checker(repeatable, findTimes, False)
 print(found)
 print(found / total)
-print(1 - found / total)
 
-# with 1m and d = 11cm the accurate result is 0.7680
+
+
+

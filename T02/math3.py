@@ -2,10 +2,10 @@ from My_Probability.combinations import Checker
 from My_Probability.multiplier import Repeatable_Cycler
 from My_Probability.static_calculation import Repeatable
 
-accuracy = 60
+accuracy = 40
 totalLength = 100 * accuracy
-smallerThan = 11 * accuracy
-largerThan = 77 * accuracy
+smallerThan = 22 * accuracy
+largerThan = 69 * accuracy
 
 def atLeastOneSmaller(list):
     # in the list we have two dividing points
