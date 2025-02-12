@@ -2,7 +2,7 @@ from My_Probability.combinations import Checker
 from My_Probability.multiplier import Repeatable_Cycler
 from My_Probability.static_calculation import Repeatable
 
-multiply = 50
+multiply = 1
 
 x = 6 * multiply
 y = 22 * multiply

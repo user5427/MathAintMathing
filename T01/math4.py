@@ -1,7 +1,7 @@
 from random import random, randint
 # 4 task
-seats = 5
-watchers = 2
+seats = 40
+watchers = 5
 
 attempts = 0
 equal = 0
@@ -39,7 +39,7 @@ watcherPozitions = []
 for i in range(0, watchers):
     watcherPozitions.append(i)
 while not isFinished:
-    print(watcherPozitions)
+    # print(watcherPozitions)
 
     attempts += 1
     for j in range(0, watchers - 1):

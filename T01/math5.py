@@ -34,7 +34,7 @@ for i in range(0, len(testArray)):
     testArray[randomIndex] = temp
 
 
-attempts = 1000000
+attempts = 1000
 equal = 0
 
 for i in range(0, attempts):

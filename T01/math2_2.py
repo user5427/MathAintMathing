@@ -16,7 +16,15 @@ def demaskedAtLastCall(list):
     for j in range(0, calls):
         homesCalled[(list[j]-1) // phones] += 1
 
-    if homesCalled[(list[calls - 1]-1) // phones] == 2:
+    notDem = False
+    avoid = (list[calls-1]-1) // phones
+    for j in range(0, houses):
+        if homesCalled[j] >= 2 and j != avoid:
+            notDem = True
+            break
+
+    if homesCalled[(list[calls - 1]-1) // phones] == 2 and not notDem:
+        # print(list)
         return True
     else:
         return False
@@ -24,6 +32,6 @@ def demaskedAtLastCall(list):
 
 a_Cycle = A_Cycler(totalPhones, calls)
 total = A(totalPhones, calls)
-found = Checker(a_Cycle, demaskedAtLastCall, True)
+found = Checker(a_Cycle, demaskedAtLastCall, False)
 print(found)
 print(found/total)
