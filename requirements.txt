@@ -1,0 +1,2 @@
+.venv
+./My_Probability/__pycache__/*

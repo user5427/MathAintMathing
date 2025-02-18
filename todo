@@ -1,0 +1,1 @@
+Package name=>.venv is not installed in your python environment, either install it ( better to install requirements.txt altogether) or set the setting Use Python Virtual Environment to true to automatically install it in virtual environment (please note that this may slow down the analysis)
