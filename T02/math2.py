@@ -1,8 +1,8 @@
 from math import ceil
 
-from My_Probability.combinations import Checker
-from My_Probability.multiplier import Repeatable_Cycler
-from My_Probability.static_calculation import Repeatable
+from My_Probability.deprecated_combinations import Checker
+from My_Probability.cyclers import Repeatable_Cycler
+from My_Probability.static_calculators import Repeatable
 
 aSendingTime = 8
 bSendingTime = 6
@@ -43,7 +43,7 @@ def certainCountOfMessages(list):
     if (timeToG <= turningOnTime and timeToG > 0):
         count += 1
 
-    if (count == 2):
+    if (count == 1):
         print(time, timeToA, timeToB, timeToG)
         return True
     else:

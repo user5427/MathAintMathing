@@ -1,8 +1,7 @@
-from My_Probability.static_calculation import Repeatable
-
+import deprecated
+from My_Probability.static_calculators import Repeatable
 
 # cycle through all C n k combinations
-
 
 def C_iterator(n, k):
     list = []
@@ -32,7 +31,6 @@ def C_iterator(n, k):
 # cycle through all A n k combinations
 # this function is not optimized and is very slow for large n and k
 
-
 def A_iterator(n, k):
     numbers = list(range(1, n + 1))
 
@@ -48,7 +46,6 @@ def A_iterator(n, k):
     yield from recursiveSearcher(numbers, [], k)  # Start recursion
 
 # cycle through all Repeatable n k combinations
-
 
 def Repeatable_iterator(n, k):
     list = []

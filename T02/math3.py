@@ -1,6 +1,6 @@
-from My_Probability.combinations import Checker
-from My_Probability.multiplier import Repeatable_Cycler
-from My_Probability.static_calculation import Repeatable
+from My_Probability.deprecated_combinations import Checker
+from My_Probability.cyclers import Repeatable_Cycler
+from My_Probability.static_calculators import Repeatable
 
 accuracy = 40
 totalLength = 100 * accuracy

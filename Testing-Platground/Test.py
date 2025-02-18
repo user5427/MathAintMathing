@@ -1,4 +1,4 @@
-from My_Probability.combinations import C_Cycle, Repeatable_Cycle
+from My_Probability.deprecated_combinations import C_Cycle, Repeatable_Cycle
 
 
 # list[i] == list[i+1]

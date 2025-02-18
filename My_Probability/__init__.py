@@ -1,4 +1,4 @@
-from . import combinations
+from . import deprecated_combinations
 from . import iterators
-from . import multiplier
-from . import static_calculation
+from . import cyclers
+from . import static_calculators
