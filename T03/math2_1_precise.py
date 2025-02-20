@@ -15,9 +15,11 @@
 
 # print(sum)
 
-n = 5
-AWinCombinations = 4
-BWinCombinations = 6
+# antram variantui
+
+n = 10000
+AWinCombinations = 2
+BWinCombinations = 1
 winChances = []
 chanceToWin = AWinCombinations / (6 ** 2)
 chanceToLoose = ((6 ** 2) - AWinCombinations - BWinCombinations) / (6 ** 2)

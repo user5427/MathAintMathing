@@ -2,8 +2,8 @@ from My_Probability.cyclers import Repeatable_Cycler
 from My_Probability.evaluators import Evaluator
 
 
-n = 9
-m = 7
+n = 14
+m = 12
 
 # list contains only 0 and 1
 def Shorten(list):
@@ -15,7 +15,7 @@ def Shorten(list):
         copyList.pop(-1)
         
     # check if the list length is equal to m
-    if len(copyList) == m:
+    if len(copyList) > m:
         return True
     return False
 

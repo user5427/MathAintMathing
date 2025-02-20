@@ -2,13 +2,11 @@ from My_Probability.cyclers import Repeatable_Cycler
 from My_Probability.evaluators import Evaluator
 
 
-n = 5
+n = 4
 
-AWins = True
-BWins = False
 
-AWinNum = 5
-BWinNum = 7
+AWinNum = 12
+BWinNum = 3
 
 def Eval(list):
     sums = []
@@ -17,13 +15,9 @@ def Eval(list):
         
     for i in sums:
         if i == AWinNum:
-            if not AWins:
-                return False
             return True
-        if i == BWinNum:
-            if not BWins:
-                return False
-            return True
+        elif i == BWinNum:
+            return False
     return False
     
 def OnlyAWins(list):

@@ -5,7 +5,7 @@ from My_Probability.deprecated_combinations import Checker
 from My_Probability.cyclers import Repeatable_Cycler
 from My_Probability.static_calculators import Repeatable
 
-n = 7
+n = 13
 
 def x1x2x3(list):
     if (list[0] < list[1] and list[1] < list[2]):
