@@ -31,7 +31,10 @@ def C_iterator(n, k, startingList = None):
         if list[0] == n - k + 1:
             break
         
-        if cycles is not None and cycl == cycles:
+        if cycles is not None and cycl >= cycles:
+            print("breaking")
+            print(cycl)
+            print(cycles)
             break
         
         cycl += 1
@@ -114,7 +117,7 @@ def Repeatable_iterator(n, k, startingList = None):
         if cycl == Repeatable(n, k) - 1:
             break
         
-        if cycles is not None and cycl == cycles:
+        if cycles is not None and cycl >= cycles:
             break
 
         # increment the last element if possible, otherwise increment the previous element, and so on

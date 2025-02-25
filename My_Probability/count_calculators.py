@@ -1,3 +1,5 @@
+from math import factorial
+
 
 
 def C(n, k):
@@ -11,9 +13,8 @@ def C(n, k):
     Returns:
         _type_: _description_
     """
-    if k == 0 or k == n:
-        return 1
-    return C(n - 1, k - 1) + C(n - 1, k)
+    
+    return factorial(n) // (factorial(k) * factorial(n - k))
 
 
 def A(n, k):

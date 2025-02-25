@@ -1,7 +1,7 @@
 from My_Probability.cyclers import ICycler
 import multiprocessing
 from My_Probability.cyclers import C_Cycler, Repeatable_Cycler, A_Cycler
-from My_Probability.splitters import RepeatableListSplit
+from My_Probability.splitters import AListSplit, CListSplit, RepeatableListSplit
 
 def worker_C_Cycler(args):
     n, k, sublist, condition = args
@@ -40,11 +40,11 @@ class MultiThreadedEvaluator():
         self.n, self.k = self.a.getParameters()
         
     def Evaluate(self):
-        cpuCount = multiprocessing.cpu_count()-2
+        cpuCount = multiprocessing.cpu_count()
         
         
         if isinstance(self.a, C_Cycler):
-            listSeparation = RepeatableListSplit(self.n, self.k, cpuCount)
+            listSeparation = CListSplit(self.n, self.k, cpuCount)
             self.total = self.a.getTotal()
             # ok so the list contains seperate lists for each seperate thread where cycles are split
             # now we need to create the threads and run them
@@ -64,7 +64,7 @@ class MultiThreadedEvaluator():
             self.totalMetConditions = sum(results)
 
         elif isinstance(self.a, A_Cycler):
-            listSeparation = RepeatableListSplit(self.n, self.k, cpuCount)
+            listSeparation = AListSplit(self.n, self.k, cpuCount)
             self.total = self.a.getTotal()
             
             with multiprocessing.Pool(cpuCount) as pool:

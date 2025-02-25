@@ -77,22 +77,27 @@ def CListSplit(n, k, splits):
     splitLists = []
     copy = list.copy()
     splitLists.append((copy, 0))
-    while len(splitLists) <= splits:
+    
+    foundCombinations = 0
+    totalCombinations = C(n, k)
+    while len(splitLists) < splits:
         weights = []
         for i in range(0, k):
             element = list[k - i - 1]
             weight = C(n - element+1, i+1)
             weights.append(weight)
             
-        # weights.reverse()
-        # print(weights)
-        # break
         changePosition = k - 1
         weight = 0
+        
+        sumOfI = 0
         for i in weights:
-            if i >= splitLengths:
+            sumOfI += i
+            # change this sumOFI based on desire...
+            if sumOfI >= splitLengths and foundCombinations + i <= totalCombinations:
                 changePosition -= 1
                 weight = i
+                foundCombinations += i
                 break
             changePosition -= 1
             
@@ -119,3 +124,6 @@ def CListSplit(n, k, splits):
         
         
     return splitLists
+
+# list = CListSplit(20, 16, 16)
+# print(list)
