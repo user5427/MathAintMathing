@@ -2,7 +2,7 @@ import deprecated
 from My_Probability.count_calculators import Repeatable
 
 
-def C_iterator(n, k, startingList = None, cycles = None):
+def C_iterator(n, k, startingList = None):
     """_summary_
     Cycle through all C n k combinations
     
@@ -15,8 +15,10 @@ def C_iterator(n, k, startingList = None, cycles = None):
     Yields:
         _type_: _description_
     """
+    cycles = None
     if startingList is not None:
-        list = startingList
+        list = startingList[0]
+        cycles = startingList[1]
     else:
         list = []
         for i in range(0, k):
@@ -82,7 +84,7 @@ def A_iterator(n, k, startingList = None):
         yield from recursiveSearcher(numbers, [], k)  # Start recursion
 
 
-def Repeatable_iterator(n, k, startingList = None, cycles = None):
+def Repeatable_iterator(n, k, startingList = None):
     """_summary_
     Cycle through all Repeatable n k combinations
     
@@ -95,8 +97,10 @@ def Repeatable_iterator(n, k, startingList = None, cycles = None):
     Yields:
         _type_: _description_
     """
+    cycles = None
     if startingList is not None:
-        list = startingList
+        list = startingList[0]
+        cycles = startingList[1]
     else:
         list = []
         for i in range(0, k):

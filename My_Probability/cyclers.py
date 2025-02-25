@@ -17,6 +17,10 @@ class ICycler(ABC):
     @abstractmethod
     def getTotal(self):
         pass
+    
+    @abstractmethod
+    def getParameters(self):
+        pass
 
 
 class A_Cycler(ICycler):
@@ -34,6 +38,9 @@ class A_Cycler(ICycler):
         
     def getTotal(self):
         return A(self.n, self.k)
+    
+    def getParameters(self):
+        return self.n, self.k
 
 
 class C_Cycler(ICycler):
@@ -51,6 +58,9 @@ class C_Cycler(ICycler):
         
     def getTotal(self):
         return C(self.n, self.k)
+    
+    def getParameters(self):
+        return self.n, self.k
 
 
 class Repeatable_Cycler(ICycler):
@@ -68,6 +78,9 @@ class Repeatable_Cycler(ICycler):
         
     def getTotal(self):
         return Repeatable(self.n, self.k)
+    
+    def getParameters(self):
+        return self.n, self.k
 
 
 class CombinationGenerator(ICycler):
