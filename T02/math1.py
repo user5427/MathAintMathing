@@ -1,6 +1,6 @@
 from My_Probability.deprecated_combinations import Checker
 from My_Probability.cyclers import Repeatable_Cycler
-from My_Probability.static_calculators import Repeatable
+from My_Probability.count_calculators import Repeatable
 
 accuracyImprovment = 0.1
 accuracyMultiplier = 1 / accuracyImprovment

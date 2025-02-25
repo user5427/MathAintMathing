@@ -1,6 +1,6 @@
 from My_Probability.deprecated_combinations import Checker
 from My_Probability.cyclers import Repeatable_Cycler
-from My_Probability.static_calculators import Repeatable
+from My_Probability.count_calculators import Repeatable
 
 multiply = 1000000
 

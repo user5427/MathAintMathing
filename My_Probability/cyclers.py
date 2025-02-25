@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 from typing import List
 
 from My_Probability.iterators import A_iterator, C_iterator, Repeatable_iterator
-from My_Probability.static_calculators import A, C, Repeatable
+from My_Probability.count_calculators import A, C, Repeatable
 
 class ICycler(ABC):
 
@@ -20,13 +20,14 @@ class ICycler(ABC):
 
 
 class A_Cycler(ICycler):
-    def __init__(self, n, k):
-        self.iterator = A_iterator(n, k)  # Store generator
+    def __init__(self, n, k, startingList = None):
+        self.iterator = A_iterator(n, k, startingList)  # Store generator
         self.n = n
         self.k = k
+        self.startingList = startingList
 
     def reset(self):
-        self.iterator = A_iterator(self.n, self.k)
+        self.iterator = A_iterator(self.n, self.k, self.startingList)
 
     def giveNext(self):
         yield from self.iterator
@@ -36,13 +37,14 @@ class A_Cycler(ICycler):
 
 
 class C_Cycler(ICycler):
-    def __init__(self, n, k):
-        self.iterator = C_iterator(n, k)
+    def __init__(self, n, k, startingList = None):
+        self.iterator = C_iterator(n, k, startingList)
         self.n = n
         self.k = k
+        self.startingList = startingList
 
     def reset(self):
-        self.iterator = C_iterator(self.n, self.k)
+        self.iterator = C_iterator(self.n, self.k, self.startingList)
 
     def giveNext(self):
         yield from self.iterator
@@ -52,13 +54,14 @@ class C_Cycler(ICycler):
 
 
 class Repeatable_Cycler(ICycler):
-    def __init__(self, n, k):
-        self.iterator = Repeatable_iterator(n, k)
+    def __init__(self, n, k, startingList = None):
+        self.iterator = Repeatable_iterator(n, k, startingList)
         self.n = n
         self.k = k
+        self.startingList = startingList
 
     def reset(self):
-        self.iterator = Repeatable_iterator(self.n, self.k)
+        self.iterator = Repeatable_iterator(self.n, self.k, self.startingList)
 
     def giveNext(self):
         yield from self.iterator
@@ -67,7 +70,7 @@ class Repeatable_Cycler(ICycler):
         return Repeatable(self.n, self.k)
 
 
-class Multiplier(ICycler):
+class CombinationGenerator(ICycler):
     def __init__(self, a: "ICycler", b: "ICycler" = None):
         self.a = a
         self.b = b

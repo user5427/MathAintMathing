@@ -1,7 +1,7 @@
 from random import random, randint
 
 from My_Probability.deprecated_combinations import C_Cycle
-from My_Probability.static_calculators import C
+from My_Probability.count_calculators import C
 
 # 5 task
 

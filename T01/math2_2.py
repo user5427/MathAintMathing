@@ -1,6 +1,6 @@
 from My_Probability.deprecated_combinations import A_Cycle, Checker
 from My_Probability.cyclers import A_Cycler
-from My_Probability.static_calculators import A
+from My_Probability.count_calculators import A
 
 houses = 8
 phones = 4
