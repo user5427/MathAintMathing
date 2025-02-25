@@ -54,9 +54,6 @@ class MultiThreadedEvaluator():
 
             self.totalMetConditions = sum(results)
             
-            resultPrinter(self.total, self.totalMetConditions)
-            
-            
         elif isinstance(self.a, Repeatable_Cycler):
             listSeparation = RepeatableListSplit(self.n, self.k, cpuCount)
             self.total = self.a.getTotal()
@@ -65,10 +62,7 @@ class MultiThreadedEvaluator():
                 results = pool.map(worker_Repeatable_Cycler, [(self.n, self.k, sublist, self.condition) for sublist in listSeparation])
                 
             self.totalMetConditions = sum(results)
-            
-            resultPrinter(self.total, self.totalMetConditions)
-                
-                
+
         elif isinstance(self.a, A_Cycler):
             listSeparation = RepeatableListSplit(self.n, self.k, cpuCount)
             self.total = self.a.getTotal()
@@ -77,8 +71,6 @@ class MultiThreadedEvaluator():
                 results = pool.map(worker_A_Cycler, [(self.n, self.k, sublist, self.condition) for sublist in listSeparation])
                 
             self.totalMetConditions = sum(results)
-            
-            resultPrinter(self.total, self.totalMetConditions)
         else:
             print("ICycler is of an unknown type")
             return

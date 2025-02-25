@@ -1,33 +1,31 @@
-# import multiprocessing
+import multiprocessing
 
-# n = 4 # stops
-# m = 5 # passangers
-# k = 4 # stops where no one gets off
+n = 7 # stops
+m = 7 # passangers
+k = 4 # stops where no one gets off
     
-# def OneOrMOreStopWhereNoOneGetsOff(list):
-#         stops = []
-#         for i in range(0, n):
-#             stops.append(0)
+def OneOrMOreStopWhereNoOneGetsOff(list):
+        stops = []
+        for i in range(0, n):
+            stops.append(0)
             
-#         for i in list:
-#             stops[i-1] += 1
             
-#         emptyStops = 0
-#         for i in stops:
-#             if i == 0:
-#                 emptyStops += 1
+        for i in list:
+            stops[i-2] += 1
+            
+        emptyStops = 0
+        for i in stops:
+            if i == 0:
+                emptyStops += 1
                 
-#         if emptyStops >= 1: # change based on desired stops
-#             return True
-#         return False
+        if emptyStops >= 1: # change based on desired stops
+            return True
+        return False
 
-# if __name__ == '__main__':
-#     multiprocessing.set_start_method('spawn')
-from My_Probability.cyclers import Repeatable_Cycler
-from My_Probability.evaluators import Evaluator, MultiThreadedEvaluator
-
-
-
+if __name__ == '__main__':
+    multiprocessing.set_start_method('spawn')
+    from My_Probability.cyclers import Repeatable_Cycler
+    from My_Probability.evaluators import Evaluator, MultiThreadedEvaluator
 
 
 
@@ -58,30 +56,30 @@ from My_Probability.evaluators import Evaluator, MultiThreadedEvaluator
     # plt.grid(True)
     # plt.show()
 
-n = 4 # stops
-m = 5 # passangers
-k = 4 # stops where no one gets off
+# n = 4 # stops
+# m = 5 # passangers
+# k = 4 # stops where no one gets off
     
-def OneOrMOreStopWhereNoOneGetsOff(list):
-        stops = []
-        for i in range(0, n):
-            stops.append(0)
+# def OneOrMOreStopWhereNoOneGetsOff(list):
+#         stops = []
+#         for i in range(0, n):
+#             stops.append(0)
             
-        for i in list:
-            stops[i-1] += 1
+#         for i in list:
+#             stops[i-1] += 1
             
-        emptyStops = 0
-        for i in stops:
-            if i == 0:
-                emptyStops += 1
+#         emptyStops = 0
+#         for i in stops:
+#             if i == 0:
+#                 emptyStops += 1
                 
-        if emptyStops >= 1: # change based on desired stops
-            return True
-        return False
+#         if emptyStops >= 1: # change based on desired stops
+#             return True
+#         return False
 
 
-repeatable = Repeatable_Cycler(n, m)
-evaluated = Evaluator(repeatable, OneOrMOreStopWhereNoOneGetsOff)
-evaluated.printResults()
+    repeatable = Repeatable_Cycler(n, m)
+    evaluated = MultiThreadedEvaluator(repeatable, OneOrMOreStopWhereNoOneGetsOff)
+    evaluated.printResults()
             
             #0.9891

@@ -15,7 +15,7 @@ def RepeatableListSplit(n, k, splits):
     
     splitLists = []
     
-    startingValue = 1
+    startingValue = 0
     for i in range(0, splits):
         # convert the starting value to the n number system
         splitList = []
@@ -24,6 +24,9 @@ def RepeatableListSplit(n, k, splits):
             splitList.append(temp % n)
             temp = temp // n
         splitList.reverse()
+        # add one to all the elements
+        for j in range(0, k):
+            splitList[j] += 1
         splitLists.append((splitList, splitLengths))
         startingValue += splitLengths
         
