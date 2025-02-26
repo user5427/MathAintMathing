@@ -2,7 +2,7 @@ import multiprocessing
 
 from My_Probability.evaluators import MultiThreadedEvaluator
 
-n = 28
+n = 29
 m = 10
 k = 2
 

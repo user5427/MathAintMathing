@@ -1,20 +1,21 @@
 from My_Probability.cyclers import C_Cycler
-from My_Probability.evaluators import Evaluator
+from My_Probability.evaluators import DecisionalEvaluator
 
 
-n = 20
+n = 23
 m = 6
-k = 2
+k = 3
 
 def WillHaveSeatsWithEvenNumeration(list):
     # we have m people
-    
+    AllEven = True    
     for i in range(0, len(list)):
-        if list[i] % 2 == 0:
-            return True
-    return False
+        if list[i] % 2 != 0:
+            AllEven = False
+            break
 
+    return AllEven
 
-cycler = C_Cycler(n, m+k)
-evaluated = Evaluator(cycler, WillHaveSeatsWithEvenNumeration)
+cycler = C_Cycler(n, k)
+evaluated = DecisionalEvaluator(cycler, WillHaveSeatsWithEvenNumeration)
 evaluated.printResults()

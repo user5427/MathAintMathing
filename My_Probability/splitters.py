@@ -116,7 +116,11 @@ def CListSplit(n, k, splits):
     # fix the count by moving the count from second element to the first touple. calculate the count for the last touple by using C(n, k) - sum of all other counts
     sum = 0
     for i in range(1, len(splitLists)):
-        splitLists[0] = (splitLists[0][0], splitLists[i][1])
+        count = splitLists[i][1] - 1
+        if (i > 2): # somewhere here problem
+            count -= 1
+        splitLists[0] = (splitLists[0][0], count)
+        
         sum += splitLists[i][1]
         
     totalForLast = C(n, k) - sum
@@ -125,5 +129,5 @@ def CListSplit(n, k, splits):
         
     return splitLists
 
-# list = CListSplit(20, 16, 16)
-# print(list)
+list = CListSplit(5, 3, 3)
+print(list)

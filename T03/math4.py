@@ -1,5 +1,5 @@
 from My_Probability.cyclers import Repeatable_Cycler
-from My_Probability.evaluators import Evaluator
+from My_Probability.evaluators import DecisionalEvaluator
 
 
 n = 14
@@ -20,5 +20,5 @@ def Shorten(list):
     return False
 
 repeatable = Repeatable_Cycler(2, n)
-evaluated = Evaluator(repeatable, Shorten)
+evaluated = DecisionalEvaluator(repeatable, Shorten)
 evaluated.printResults()

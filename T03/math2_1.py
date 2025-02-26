@@ -1,5 +1,5 @@
 from My_Probability.cyclers import Repeatable_Cycler
-from My_Probability.evaluators import Evaluator
+from My_Probability.evaluators import DecisionalEvaluator
 
 # NOTICE. THE CODE BELOW MAY NOT ACCURATELY REPRESENT REQUIREMENTS.
 
@@ -40,6 +40,6 @@ def Eval(list):
 #     return False
     
 repeatable = Repeatable_Cycler(6, n*2)
-evaluated = Evaluator(repeatable, Eval)
+evaluated = DecisionalEvaluator(repeatable, Eval)
 evaluated.printResults()
      

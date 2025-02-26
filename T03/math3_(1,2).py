@@ -25,7 +25,7 @@ def OneOrMOreStopWhereNoOneGetsOff(list):
 if __name__ == '__main__':
     multiprocessing.set_start_method('spawn')
     from My_Probability.cyclers import Repeatable_Cycler
-    from My_Probability.evaluators import Evaluator, MultiThreadedEvaluator
+    from My_Probability.evaluators import DecisionalEvaluator, MultiThreadedEvaluator
 
 
 

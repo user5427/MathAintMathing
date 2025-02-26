@@ -1,5 +1,5 @@
 from My_Probability.cyclers import A_Cycler
-from My_Probability.evaluators import Evaluator
+from My_Probability.evaluators import DecisionalEvaluator
 
 # same as math2_1.py just slower
 
@@ -29,5 +29,5 @@ def Eval(list):
         return False
         
 aCycler = A_Cycler(n, n)
-eval = Evaluator(aCycler, Eval)
+eval = DecisionalEvaluator(aCycler, Eval)
 eval.printResults()
