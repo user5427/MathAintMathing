@@ -1,5 +1,5 @@
 from My_Probability.cyclers import Repeatable_Cycler
-from My_Probability.evaluators import DecisionalEvaluator
+from My_Probability.evaluators import Evaluator
 
 
 m = 17
@@ -28,5 +28,5 @@ def CWillGetLessBadMessagesThanA(list):
     return False
 
 repeatable = Repeatable_Cycler(n+m, 2)
-evaluated = DecisionalEvaluator(repeatable, CWillGetLessBadMessagesThanA)
+evaluated = Evaluator(repeatable, CWillGetLessBadMessagesThanA)
 evaluated.printResults()

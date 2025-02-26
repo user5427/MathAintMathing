@@ -1,5 +1,5 @@
 from My_Probability.cyclers import Repeatable_Cycler
-from My_Probability.evaluators import DecisionalEvaluator
+from My_Probability.evaluators import Evaluator
 
 
 n = 13
@@ -11,6 +11,6 @@ def Equal(list):
         return False
     
 repeatabl = Repeatable_Cycler(n, 3)
-evaluated = DecisionalEvaluator(repeatabl, Equal)
+evaluated = Evaluator(repeatabl, Equal)
 evaluated.printResults()
 

@@ -1,5 +1,5 @@
 from My_Probability.cyclers import C_Cycler
-from My_Probability.evaluators import DecisionalEvaluator
+from My_Probability.evaluators import Evaluator
 
 
 n = 23
@@ -17,5 +17,5 @@ def WillHaveSeatsWithEvenNumeration(list):
     return AllEven
 
 cycler = C_Cycler(n, k)
-evaluated = DecisionalEvaluator(cycler, WillHaveSeatsWithEvenNumeration)
+evaluated = Evaluator(cycler, WillHaveSeatsWithEvenNumeration)
 evaluated.printResults()
