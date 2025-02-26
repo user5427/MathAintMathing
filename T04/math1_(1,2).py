@@ -1,6 +1,6 @@
 
 from My_Probability.cyclers import C_Cycler, Repeatable_Cycler
-from My_Probability.evaluators import Evaluator
+from My_Probability.evaluators import DecisionalEvaluator, Evaluator
 
 
 n = 12
@@ -14,12 +14,15 @@ def SumLargerThanX(list):
     return False
 
 def FirstEvenSumLargerThanX(list):
+    if list[0] % 2 == 1:
+        return -1
+    
     # two elements
     if list[0] % 2 == 0 and list[0] + list[1] > x:
         print(list)
-        return True
-    return False
+        return 1
+    return 0
 
 cycler = Repeatable_Cycler(n, 2)
-evaluated = Evaluator(cycler, FirstEvenSumLargerThanX)
+evaluated = DecisionalEvaluator(cycler, FirstEvenSumLargerThanX)
 evaluated.printResults()

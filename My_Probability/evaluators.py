@@ -2,6 +2,8 @@ from My_Probability.cyclers import ICycler
 import multiprocessing
 from My_Probability.cyclers import C_Cycler, Repeatable_Cycler, A_Cycler
 from My_Probability.splitters import AListSplit, CListSplit, RepeatableListSplit
+from abc import ABC, abstractmethod
+from typing import List
 
 def worker_C_Cycler(args):
     n, k, sublist, condition = args
@@ -29,6 +31,41 @@ def worker_A_Cycler(args):
         if condition(i):
             count += 1
     return count
+
+
+class IDecision(ABC):
+    @abstractmethod
+    def Decide(self, list: List[int], condition: "function") -> (int, int):
+        pass
+    
+    @abstractmethod
+    def Reset(self, total):
+        pass
+    
+    @abstractmethod
+    def GetResults(self):
+        pass
+    
+class Decision(IDecision):
+    def __init__(self, total):
+        self.total = total
+        self.good = 0
+        super().__init__()
+        
+    def Reset(self, total):
+        self.total = total
+        self.good = 0
+        
+    def Decide(self, list: List[int], condition: "function") -> (int, int):
+        if condition(list):
+            self.good += 1
+    
+    def GetResults(self):
+        return self.good, self.total
+        
+        
+    
+    
 
 class MultiThreadedEvaluator():
     def __init__(self, a: "ICycler", condition = lambda x: True):
@@ -134,60 +171,64 @@ class Evaluator():
         resultPrinter(self.total, self.totalMetConditions)
         
 
-# class DecisionalEvaluator():
-#     """
-#     This class is used to evaluate a given ICycler object with a given condition.
-#     The condition is a function that takes a list of integers and returns a boolean.
-#     1 -> True
-#     -1 -> Reduce the total by 1
-#     0 -> False
-#     """
-#     def __init__(self, a: "ICycler", condition = lambda x: True):
-#         self.a = a
-#         self.condition = condition
-#         self.totalMetConditions = 0
-#         self.evaluated = False
-#         self.total = 0
+
+
+class DecisionalEvaluator():
+    """
+    This class is used to evaluate a given ICycler object with a given condition.
+    The condition is a function that takes a list of integers and returns a boolean.
+    1 -> True
+    -1 -> Reduce the total by 1
+    0 -> False
+    """
+    def __init__(self, a: "ICycler", condition = lambda x: True):
+        self.a = a
+        self.condition = condition
+        self.totalMetConditions = 0
+        self.evaluated = False
+        self.total = 0
         
-#     def Evaluate(self):
-#         visualization = ['\\', '|', '/', '-']
-#         visualizationTime = 40000
-#         visualizationCurrent = 0
-#         vizIndex = 0
-#         statusTime = 0
-#         self.total = self.a.getTotal()
+    def Evaluate(self):
+        visualization = ['\\', '|', '/', '-']
+        visualizationTime = 40000
+        visualizationCurrent = 0
+        vizIndex = 0
+        statusTime = 0
+        self.total = self.a.getTotal()
+        temp = self.total
             
-#         totalMetConditions = 0
-#         for i in self.a.giveNext():
-#             visualizationCurrent += 1
-#             if visualizationCurrent == visualizationTime:
-#                 visualizationCurrent = 0
+        totalMetConditions = 0
+        for i in self.a.giveNext():
+            visualizationCurrent += 1
+            if visualizationCurrent == visualizationTime:
+                visualizationCurrent = 0
                 
-#                 print(visualization[vizIndex], statusTime * visualizationTime / self.total, end = '\r')
+                print(visualization[vizIndex], statusTime * visualizationTime / self.total, end = '\r')
                 
-#                 statusTime += 1
-#                 vizIndex += 1
-#                 if vizIndex == 4:
-#                     vizIndex = 0
-#             if self.condition(i) == 1:
-#                 totalMetConditions += 1
-#             elif self.condition(i) == -1:
-#                 self.total -= 1
+                statusTime += 1
+                vizIndex += 1
+                if vizIndex == 4:
+                    vizIndex = 0
+            if self.condition(i) == 1:
+                totalMetConditions += 1
+            elif self.condition(i) == -1:
+                temp -= 1
 
-#         self.totalMetConditions = totalMetConditions
-#         self.evaluated = True
-#         return totalMetConditions
+        self.totalMetConditions = totalMetConditions
+        self.total = temp
+        self.evaluated = True
+        return totalMetConditions
 
-#     def getResults(self):
-#         return self.totalMetConditions, self.total
+    def getResults(self):
+        return self.totalMetConditions, self.total
     
-#     def printResults(self):
-#         if not self.evaluated:
-#             print("Evaluator has not been evaluated yet.")
-#             print("Evaluating automatically...")
-#             self.Evaluate()
+    def printResults(self):
+        if not self.evaluated:
+            print("Evaluator has not been evaluated yet.")
+            print("Evaluating automatically...")
+            self.Evaluate()
             
-#         resultPrinter(self.total, self.totalMetConditions)
+        resultPrinter(self.total, self.totalMetConditions)
         
         
         
