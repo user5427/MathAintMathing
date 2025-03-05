@@ -7,7 +7,7 @@ p1 = 96
 p2 = 9
 
 resolution = 20
-
+# calculates A - the sum of all positivities
 def possitiveTest(list):
     if list[0] / resolution > p and list[1] / resolution <= p2:
         return True
