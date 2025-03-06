@@ -4,7 +4,7 @@ from multiprocessing import Pool
 pA = 0.64
 pB = 0.33
 
-def takingABA():
+def takingBAB():
     bWin = False
     aWin = False
     bWin2 = False
@@ -27,7 +27,7 @@ def takingABA():
 def run_experiment(n):
     count = 0
     for _ in range(n):
-        count += takingABA()
+        count += takingBAB()
     return count
 
 def parallel_execution(repeat, num_processes):
