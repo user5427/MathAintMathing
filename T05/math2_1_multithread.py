@@ -20,6 +20,12 @@ def takingABA():
         return 1
     if aWin and not bWin and aWin2:
         return 1
+    if aWin and bWin and not aWin2:
+        return 1
+    if not aWin and bWin and aWin2:
+        return 1
+    if not aWin and bWin and not aWin2:
+        return 1
     
     return 0
         
@@ -41,7 +47,7 @@ def parallel_execution(repeat, num_processes):
     return total_count / repeat
 
 if __name__ == '__main__':
-    repeat = 30_000_0000
+    repeat = 3_000_0000
     num_processes = 16  # Number of processes (usually number of cores on your CPU)
     
     result = parallel_execution(repeat, num_processes)

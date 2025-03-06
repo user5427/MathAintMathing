@@ -18,7 +18,7 @@ def taking():
             return 1 if turnNr == 0 else 0
         
         turnNr += 1
-        if turnNr > 2:
+        if turnNr >= 2:
             turnNr = 0
     
     return 0
