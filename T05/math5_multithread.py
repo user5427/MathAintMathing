@@ -1,26 +1,32 @@
 from random import random
 from multiprocessing import Pool
 
-p = 0.65
-m = 3
-n = 4
+p = 0.44
+m = 4
+n = 7
 
 def saulys():
     tries = 0
     hitTarget = False
+    # hits = 0
     # saulys bando numusti taikini su tikimybe p, jis gali kartoti tai n kartu
     for _ in range(n):
         tries += 1
-        if random() < p:
+        if random() <= p:
+            # hits += 1
             hitTarget = True
             break
         
     if hitTarget == False:
         return 0
     else:
-        if tries == m:
+        if tries <= m:
             return 1
         return 0
+    
+    # if hits <= m:
+    #     return 1
+    # return 0
 
 def run_experiment(n):
     count = 0
@@ -39,7 +45,7 @@ def parallel_execution(repeat, num_processes):
     return total_count / repeat
 
 if __name__ == '__main__':
-    repeat = 100_000_0000
+    repeat = 10_000_0000
     num_processes = 16  # Number of processes (usually number of cores on your CPU)
     
     result = parallel_execution(repeat, num_processes)

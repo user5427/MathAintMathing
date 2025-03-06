@@ -2,8 +2,8 @@ from random import random
 from multiprocessing import Pool
 
 p1 = 0.6
-p2 = 0.58
-p3 = 0.85
+p2 = 0.85
+p3 = 0.62
 
 def judges():
     p1Corr = False
