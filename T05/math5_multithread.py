@@ -1,9 +1,11 @@
+
+
 from random import random
 from multiprocessing import Pool
 
-p = 0.44
-m = 4
-n = 7
+p = 0.65
+m = 3
+n = 4
 
 def saulys():
     tries = 0
@@ -18,20 +20,21 @@ def saulys():
             break
         
     if hitTarget == False:
-        return 0
+        return (0, -1)
     else:
         if tries <= m:
-            return 1
-        return 0
+            return (1, 0)
+        return (0, 0)
     
     # if hits <= m:
     #     return 1
     # return 0
+        
 
 def run_experiment(n):
-    count = 0
+    count = (0, 0)
     for _ in range(n):
-        count += saulys()
+        count = (count[0]+saulys()[0], count[1]+saulys()[1])
     return count
 
 def parallel_execution(repeat, num_processes):
@@ -41,8 +44,9 @@ def parallel_execution(repeat, num_processes):
     with Pool(num_processes) as pool:
         results = pool.map(run_experiment, [chunk_size] * num_processes)
     
-    total_count = sum(results)
-    return total_count / repeat
+    total_count = sum([x[0] for x in results])
+    total_count2 = sum([x[1] for x in results])
+    return total_count / (repeat+total_count2)
 
 if __name__ == '__main__':
     repeat = 10_000_0000
