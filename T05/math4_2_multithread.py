@@ -1,12 +1,17 @@
 from random import random
 from multiprocessing import Pool
 
-n = 3.093744489
-remaining = 0.093744489+0.015
+# WRONG DO NOT USE
+# WRONG DO NOT USE
+# WRONG DO NOT USE
+# WRONG DO NOT USE
 
-dropletSize1 = 0.08
-dropletSize2 = 0.14
-a1dropletProb = 0.47
+n = 2.5531
+remaining = 0.5531
+
+dropletSize1 = 0.1
+dropletSize2 = 0.17
+a1dropletProb = 0.27
 
 def droplets():
     if random() <= a1dropletProb:
@@ -19,22 +24,29 @@ def droplets():
     
     yPosition1 = random()
     yPosition2 = random()
-    yPosition3 = random()
+    # yPosition3 = random()
     yPosition4 = random()
     
-    if yPosition1 <= badSize:
-        return 1
+    # if yPosition1 <= badSize:
+    #     return 0
     
-    if yPosition2 <= badSize:
-        return 1
+    # if yPosition2 <= badSize:
+    #     return 0
     
-    if yPosition3 <= badSize:
-        return 1
+    # # if yPosition3 <= badSize:
+    # #     return 1
     
-    if random() <= remaining:
-        if yPosition4 <= badSize:
-            return 1
-    return 0
+    # if random() <= remaining:
+    #     if yPosition4 <= badSize:
+    #         return 0
+    # return 1
+    
+    # if yPosition1 > goodSize and yPosition2 > goodSize:
+    #     if random() <= remaining:
+    #         if yPosition4 > goodSize:
+    #             return 1
+    #     return 1
+    # return 0
     
 
 def run_experiment(n):

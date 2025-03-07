@@ -1,7 +1,7 @@
 from random import random
 from multiprocessing import Pool
 
-r = 0.08
+r = 0.1
 size = 1
 
 def droplets():
