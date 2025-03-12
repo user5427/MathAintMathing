@@ -1,8 +1,8 @@
 from random import random
 from multiprocessing import Pool
 
-pA = 0.64
-pB = 0.33
+pA = 0.5
+pB = 0.45
 
 def takingABA():
     aWin = False

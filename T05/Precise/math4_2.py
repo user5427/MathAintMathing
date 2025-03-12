@@ -1,9 +1,9 @@
 import math
 
-α = 0.66
-r = 0.08
-s = 0.14
-a = 0.47
+α = 0.77
+r = 0.04
+s = 0.17
+a = 0.39
 
 rSurvivalProb = (1 - 2 * r) ** 2
 sSurvivalProb = (1 - 2 * s) ** 2
