@@ -3,9 +3,9 @@
 from random import random
 from multiprocessing import Pool
 
-p = 0.34
-n = 12
-m = 6
+p = 0.63
+n = 14
+m = 8
 
 def coin():
     xPos = 0
@@ -37,7 +37,7 @@ def parallel_execution(repeat, num_processes):
     return total_count / (repeat+total_count2)
 
 if __name__ == '__main__':
-    repeat = 30_000_000
+    repeat = 10_000_000
     num_processes = 16  # Number of processes (usually number of cores on your CPU)
     
     result = parallel_execution(repeat, num_processes)

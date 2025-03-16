@@ -3,11 +3,11 @@
 from random import random
 from multiprocessing import Pool
 
-white = 5
-black = 10
+white = 24
+black = 11
 
-n = 7
-k = 4
+n = 8
+k = 9
 
 whiteProb = white / (white + black)
 blackProb = 1 - whiteProb

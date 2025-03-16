@@ -3,9 +3,9 @@
 from random import random
 from multiprocessing import Pool
 
-p = 0.34
-n = 12
-m = 6
+p = 0.63
+n = 14
+m = 8
 
 def coin():
     xPos = 0

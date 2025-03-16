@@ -1,10 +1,10 @@
 from My_Probability.count_calculators import C
 
 
-white = 5
-black = 10
-n = 7
-k = 4
+white = 24
+black = 11
+n = 8
+k = 9
 
 def calculate(n, k, prob):
     negProb = 1 - prob

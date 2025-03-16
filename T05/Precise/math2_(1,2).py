@@ -1,5 +1,5 @@
-pA = 0.73
-pB = 0.5
+pA = 0.33
+pB = 0.64
 
 # set to true if pralaimes
 invert = False

@@ -3,12 +3,12 @@
 from random import random
 from multiprocessing import Pool
 
-r = 4.2
-r1 = 2.0
-r2 = 3.2
-n = 11
-n1 = 5
-n2 = 2
+r = 2.8
+r1 = 1.8
+r2 = 2.3
+n = 9
+n1 = 3
+n2 = 5
 n3 = n - n1 - n2
 
 sphere1Prob = r1 ** 2 / r ** 2

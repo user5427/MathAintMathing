@@ -3,11 +3,11 @@
 from random import random
 from multiprocessing import Pool
 
-white = 5
-black = 10
+white = 24
+black = 11
 
-n = 7
-k = 4
+n = 8
+k = 9
 
 whiteProb = white / (white + black)
 blackProb = 1 - whiteProb
@@ -47,7 +47,7 @@ def parallel_execution(repeat, num_processes):
     return total_count / (repeat+total_count2)
 
 if __name__ == '__main__':
-    repeat = 10_000_000
+    repeat = 30_000_000
     num_processes = 16  # Number of processes (usually number of cores on your CPU)
     
     result = parallel_execution(repeat, num_processes)
