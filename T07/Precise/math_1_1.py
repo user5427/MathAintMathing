@@ -1,15 +1,15 @@
 import math
 
-N = 582
-n = 386
-k = 3
+N = 492
+n = 137
+k = 5
+m = 5
 
 prob = k / N
 
 Lambda = n * prob
 
-required = 3
 
-res = (Lambda ** required) * (2.71828 ** -Lambda) / math.factorial(required)
+res = (Lambda ** m) * (2.71828 ** -Lambda) / math.factorial(m)
 
 print(res)

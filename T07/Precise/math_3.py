@@ -4,11 +4,11 @@ import math
 from scipy.stats import norm
 
 
-n = 238
-m = 4.0
-alfa = 0.7
+n = 439
+m = 5.0
+alfa = 0.76
 
-prob = m / 8
+prob = m / 12
 
 
 #normsinv
