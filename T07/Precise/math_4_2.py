@@ -5,7 +5,6 @@ from scipy.stats import norm
 
 
 n = 940
-p1 = 51/100
 p2 = 49/100
 p3 = 46/100
 m = 2
@@ -22,8 +21,11 @@ y *= (n * p3 * (1 - p3)) ** 0.5
 
 y += n*p3
 
-print(y)
 
-# it may be one larger (rounded)
+# q 2 and 3
 
-print(math.ceil(y))
+q2 = (y - n*p2) / (n * p2 * (1 - p2)) ** 0.5
+
+prob2 =  1 - norm.cdf(q2)
+
+print(prob2)
