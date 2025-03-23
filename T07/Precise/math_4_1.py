@@ -4,11 +4,16 @@ import math
 from scipy.stats import norm
 
 
-n = 2325
-p2 = 81/100
-p3 = 76/100
+n = 928
+p2 = 65/100
+p3 = 67/100
 m = 4
-r = 27
+r = 25
+
+m += 1
+
+p2 = p2 / m
+p3 = p3 / m
 
 
 #normsinv

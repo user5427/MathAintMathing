@@ -10,6 +10,13 @@ p3 = 76/100
 m = 4
 r = 27
 
+m += 1
+
+p2 = p2 / m
+p3 = p3 / m
+
+
+
 
 #normsinv
 def normsinv(p):
@@ -21,6 +28,7 @@ y *= (n * p3 * (1 - p3)) ** 0.5
 
 y += n*p3
 
+y = math.ceil(y)
 
 # q 2 and 3
 
