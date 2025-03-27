@@ -3,10 +3,10 @@
 from random import random
 from multiprocessing import Pool
 
-n = 36
-a = 19
-b = 13
-x = -92.63
+n = 61
+a = 21
+b = 18
+x = 226.48
 
 sellingPos = []
 for i in range(n+1):

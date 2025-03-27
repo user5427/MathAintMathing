@@ -5,6 +5,8 @@ n = 14
 r = 4
 a = 7
 
+a = a - 1
+
 sum = 0
 for k in range(a - r + 1):
     max = C(n, r)
@@ -13,3 +15,6 @@ for k in range(a - r + 1):
     sum += available / max
     
 print(sum)
+
+
+# gud

@@ -3,9 +3,9 @@
 from random import random
 from multiprocessing import Pool
 
-n = 36
-a = 19
-b = 13
+n = 61
+a = 21
+b = 18
 x = -92.63
 
 sellingPos = []
@@ -16,6 +16,7 @@ def sellingStuff():
      # Randomly select a selling position
     sold = int(random() * len(sellingPos))
     sold = sellingPos[sold]
+    # sold = n * random()
     
     profit = sold * a - (n - sold) * b
     
@@ -43,7 +44,7 @@ def parallel_execution(repeat, num_processes):
     return total_count / (repeat+total_count2)
 
 if __name__ == '__main__':
-    repeat = 20_000_000
+    repeat = 40_000_000
     num_processes = 16  # Number of processes (usually number of cores on your CPU)
     
     result = parallel_execution(repeat, num_processes)
