@@ -18,6 +18,12 @@ def twoShooters():
             X += 1
         if random() < q:
             Y += 1
+            
+    z = max(X, Y)
+    if z < a:
+        return (1, 0)
+    else:
+        return (0, 0)
     
     
     

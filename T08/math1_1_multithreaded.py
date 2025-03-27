@@ -45,7 +45,7 @@ def parallel_execution(repeat, num_processes):
     return total_count / (repeat+total_count2)
 
 if __name__ == '__main__':
-    repeat = 20_000_000
+    repeat = 100_000_000
     num_processes = 16  # Number of processes (usually number of cores on your CPU)
     
     result = parallel_execution(repeat, num_processes)
