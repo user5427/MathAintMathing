@@ -1,10 +1,10 @@
 import math
 
 
-n = 61
-a = 21
-b = 18
-x = 226.48
+n = 42
+a = 39
+b = 28
+x = 255.4
 
 
 totalM = a + b

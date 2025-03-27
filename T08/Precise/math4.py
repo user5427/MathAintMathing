@@ -1,8 +1,8 @@
 import math
 
 
-λ = 3.07
-k = 6
+λ = 1.36
+k = 7
 
 # gud x values
 xVals = []

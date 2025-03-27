@@ -24,7 +24,7 @@ result = calculate_cdf_max_binomial(p, q, n, a)
 print(f"F_Z({a}) = P(max(X,Y) ≤ {a}) = {result:.4f}")
 
 # We can also verify by calculating probabilities directly
-p_x_le_1 = stats.binom.cdf(1, n, p)
-p_y_le_1 = stats.binom.cdf(1, n, q)
-verification = p_x_le_1 * p_y_le_1
-print(f"Verification: {verification:.4f}")
+# p_x_le_1 = stats.binom.cdf(1, n, p)
+# p_y_le_1 = stats.binom.cdf(1, n, q)
+# verification = p_x_le_1 * p_y_le_1
+# print(f"Verification: {verification:.4f}")

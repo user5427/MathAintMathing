@@ -1,9 +1,9 @@
 from My_Probability.count_calculators import C
 
 
-n = 14
-r = 4
-a = 7
+n = 15
+r = 5
+a = 9
 
 a = a - 1
 

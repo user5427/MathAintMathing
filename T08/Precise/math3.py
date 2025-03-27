@@ -8,7 +8,7 @@ p = 0.61
 
 
 sum = 0
-for i in range(0, 150):
+for i in range(1, 150):
     prob = (lamb ** i) * (math.e ** -lamb) / math.factorial(i)
     geomProb = (1-p)**(i-1)*p
     
