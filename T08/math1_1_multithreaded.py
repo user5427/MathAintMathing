@@ -3,26 +3,34 @@
 from random import random
 from multiprocessing import Pool
 
-n = 61
-a = 21
-b = 18
-x = 226.48
+n = 14
+r = 4
+a = 7
 
+balls = []
+for i in range(n):
+    balls.append(i + 1)
 
-def sellingStuff():
-    sold = n * random()
-    profit = sold * a - (n - sold) * b
+def select_balls():
+    balls_copy = balls.copy()
+    selected = []
+    for _ in range(r):
+        index = int(random() * len(balls_copy))
+        selected.append(balls_copy.pop(index))
+        
+    maxNr = max(selected)
+
+    if maxNr == a:
+        return (1, 0)   
+    return (0, 0)    
     
-    if profit < x:
-        return (1, 0)
-    return (0, 0)
     
     
     
 def run_experiment(n):
     count = (0, 0)
     for _ in range(n):
-        count = (count[0]+sellingStuff()[0], count[1]+sellingStuff()[1])
+        count = (count[0]+select_balls()[0], count[1]+select_balls()[1])
     return count
 
 def parallel_execution(repeat, num_processes):

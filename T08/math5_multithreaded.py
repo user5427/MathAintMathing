@@ -3,34 +3,28 @@
 from random import random
 from multiprocessing import Pool
 
-n = 16
-r = 4
-a = 8
+p = 0.6
+q = 0.69
+n = 4
+a = 0.91
 
-balls = []
-for i in range(n):
-    balls.append(i + 1)
-
-def select_balls():
-    balls_copy = balls.copy()
-    selected = []
-    for _ in range(r):
-        index = int(random() * len(balls_copy))
-        selected.append(balls_copy.pop(index))
-        
-    maxNr = max(selected)
-
-    if maxNr < a:
-        return (1, 0)   
-    return (0, 0)    
     
+def twoShooters():
+    X = 0
+    Y = 0
+    
+    for _ in range(n):
+        if random() < p:
+            X += 1
+        if random() < q:
+            Y += 1
     
     
     
 def run_experiment(n):
     count = (0, 0)
     for _ in range(n):
-        count = (count[0]+select_balls()[0], count[1]+select_balls()[1])
+        count = (count[0]+twoShooters()[0], count[1]+twoShooters()[1])
     return count
 
 def parallel_execution(repeat, num_processes):

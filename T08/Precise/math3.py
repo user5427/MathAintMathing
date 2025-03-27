@@ -3,8 +3,8 @@
 import math
 
 
-lamb = 6.8
-p = 0.47
+lamb = 3.7
+p = 0.61
 
 
 sum = 0
