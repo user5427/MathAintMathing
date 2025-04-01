@@ -20,6 +20,7 @@ lamb = math.log (b) / math.log (a)
 
 moreThanY = math.e ** (- lamb * y)
 lessThanZ = 1 - math.e ** (- lamb * z)
-moreThanYAndLessThanZ = moreThanY * lessThanZ
+moreThanYAndLessThanZ = moreThanY + lessThanZ - 1
 
 print(moreThanYAndLessThanZ)
+
