@@ -3,18 +3,16 @@
 from random import random
 from multiprocessing import Pool
 
-a = 11.0
-b = 5.0
+a = 52.03
+b = 3.44
 k = 16
 c = 3.62
-
-epsilon = 0.001
 
 inc = 0
 def line():
     global inc
     point = inc * b
-    inc += 1 / 100_000_000
+    inc += 1 / 20_000_000
     y = k * point + c
     
     if y < a:
@@ -24,7 +22,8 @@ def line():
 def run_experiment(n):
     count = (0, 0)
     for _ in range(n):
-        count = (count[0]+line()[0], count[1]+line()[1])
+        res = line()
+        count = (count[0]+res[0], count[1]+res[1])
     return count
 
 def parallel_execution(repeat, num_processes):
@@ -39,7 +38,7 @@ def parallel_execution(repeat, num_processes):
     return total_count / (repeat+total_count2)
 
 if __name__ == '__main__':
-    repeat = 100_000_000
+    repeat = 320_000_000
     num_processes = 16  # Number of processes (usually number of cores on your CPU)
     
     result = parallel_execution(repeat, num_processes)

@@ -1,4 +1,5 @@
 
+# wildly inaccurate
 
 from random import random
 from multiprocessing import Pool

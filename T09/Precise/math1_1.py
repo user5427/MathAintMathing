@@ -1,9 +1,9 @@
-a = 11.0
-b = 5.0
-x = 2.21 
+a = 13
+b = 20
+x = 7.2
 
-DE = (b-x) / b * a
-AD = b - x
+DE = (a-x) / a * b
+AD = a - x
 
 Sbdec = b * a / 2 - DE * AD / 2
 Sabc = b * a / 2
@@ -14,5 +14,5 @@ print(prob)
 
 # D[\(40)Divide[\(40)b*Divide[a,2]-Divide[\(40)b-x\(41)*a,b]*Divide[\(40)b-x\(41),2]\(41),b*Divide[a,2]]\(41),x]
 
-der = 2 * (b - x) / b ** 2
+der = (2 * (a - x)) / a ** 2
 print(der)

@@ -1,10 +1,10 @@
 import math
 
 
-h = 14
-m = 456
-alfa = 0.89
-p = 54
+h = 7
+m = 545
+alfa = 0.82
+p = 41
 n = 1000
 
 halfProb = 0.5 
@@ -25,7 +25,7 @@ lamb = math.log (b) / math.log (a)
 invHalf = 1 / halfProb
 sqrHalf = invHalf ** (1 / lamb)
 h0 = math.log (sqrHalf) / math.log (a)
-print(f"(1) specifine tikimybe: {halfProb} aukstis {h0}")
+# print(f"(1) specifine tikimybe: {halfProb} aukstis {h0}")
 
 
 safety = (1 / alfa) ** (1 / lamb)

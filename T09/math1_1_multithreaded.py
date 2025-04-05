@@ -3,9 +3,15 @@
 from random import random
 from multiprocessing import Pool
 
-a = 11.0
-b = 5.0
-x = 2.21 
+# for AC line
+# for AC line
+# for AC line
+# for AC line
+# for AC line
+
+a = 18
+b = 11
+x = 0.94
 
 bFor = b
 aFor = -b / a

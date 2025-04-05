@@ -9,12 +9,12 @@ import math
 # USER CONFIGURATION START
 # USER CONFIGURATION START
 
-p = 0.29
+p = 0.36
 t = 30
 lamb = math.log((1 / p) ** (1 / t)) / math.log(math.e)
 
-T = 35
-n = 6
+T = 41
+n = 8
 
 count = 3
 
