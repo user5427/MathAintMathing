@@ -6,10 +6,10 @@ c = 3.62
 x = (a - c) / k
 
 Fx = x / b
-print(Fx)
+# print(Fx)
 
 pX = 1 / (b * k)
-print(pX)
+# print(pX)
 
 sum = pX + Fx
 print(sum)

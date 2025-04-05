@@ -63,14 +63,15 @@ def fishers(durations):
     # check condition
     if len(below) >= count:
         return 1, 0
-    return 0, 1
+    return 0, 0
     
     
 def run_experiment(args):
     durations, n = args  # Unpack arguments since Pool.map only supports one argument
     count = (0, 0)
     for _ in range(n):
-        count = (count[0] + fishers(durations)[0], count[1] + fishers(durations)[1])
+        exp = fishers(durations)
+        count = (count[0] + exp[0], count[1] + exp[1])
     return count
 
 # --- Parallel Execution with Multiprocessing ---
