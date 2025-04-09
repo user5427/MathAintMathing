@@ -1,10 +1,10 @@
 import math
 
 
-h = 7
-m = 545
-alfa = 0.82
-p = 41
+h = 10
+m = 562
+alfa = 0.84
+p = 37
 n = 1000
 
 halfProb = 0.5 

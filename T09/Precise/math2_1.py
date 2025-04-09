@@ -1,9 +1,9 @@
 import math
 
 
-p = 65
-x = 14
-y = 9
+p = 56
+x = 12
+y = 10
 z = 15
 
 

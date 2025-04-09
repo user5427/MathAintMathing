@@ -3,12 +3,12 @@ import math
 from My_Probability.count_calculators import C
 
 
-p = 0.36
+p = 0.34
 t = 30 # no touchey
 lamb = math.log((1 / p) ** (1 / t)) / math.log(math.e)
 
-T = 41
-n = 8
+T = 34
+n = 5
 
 prob = 1 - math.exp(-lamb * T)
 
