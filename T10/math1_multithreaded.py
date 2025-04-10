@@ -7,7 +7,7 @@ from multiprocessing import Pool
 from tqdm import tqdm
 
 p = 0.02
-q= 0.76
+q = 0.76
 
 
 def send_E1():
@@ -101,21 +101,15 @@ def parrallel_execution(repeat, num_processes, func):
 
 if __name__ == '__main__':
 
-    repeat = 1_000_000
+    repeat = 1_000_000_000
     num_processes = 16  # Number of processes (usually number of cores on your CPU)
     
     avr1 = parrallel_execution(repeat, num_processes, send_E1)
     avr2 = parrallel_execution(repeat, num_processes, send_E2)
     
-    avr1sqrt = parrallel_execution(repeat, num_processes, send_E1_sqrt)
-    avr2sqrt = parrallel_execution(repeat, num_processes, send_E2_sqrt)
-    
-    mathDispersion1 = avr1sqrt - avr1 ** 2
-    mathDispersion2 = avr2sqrt - avr2 ** 2
-    
     avr12 = parrallel_execution(repeat, num_processes, send_E12)
     
-    qxy = (avr12 - avr1 * avr2) / math.sqrt(mathDispersion1 * mathDispersion2)
+    cov = avr12 - avr1 * avr2
     
     import os
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -124,7 +118,5 @@ if __name__ == '__main__':
     print(f"Average of first: {avr1}")
     print(f"Average of second: {avr2}")
     print(f"Average of both: {avr12}")
-    print(f"Dispersion of first math: {mathDispersion1}")
-    print(f"Dispersion of second math: {mathDispersion2}")
-    print(f"Correlation coefficient: {qxy}")
+    print(f"Correlation coefficient: {cov}")
     

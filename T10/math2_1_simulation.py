@@ -19,7 +19,7 @@ lamb2 = 0.86
 # --- Simulation Parameters ---
 NUM_SIMULATIONS = 5_000_000
 NUM_THREADS = 16
-ANALYZE_COUNT = 1_000_000_00
+ANALYZE_COUNT = 1_000_000
 
 # --- Simulation Function ---
 def simulate_batch(batch_size, lamb):

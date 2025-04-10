@@ -6,10 +6,10 @@ from multiprocessing import Pool
 
 from tqdm import tqdm
 
-m = 8
-n = 8
-k1 = 6
-k2 = 6
+m = 7
+n = 9
+k1 = 4
+k2 = 7
 
 coins = []
 
@@ -214,7 +214,7 @@ def parrallel_execution(repeat, num_processes, func):
 from functools import partial
 if __name__ == '__main__':
 
-    repeat = 500_000
+    repeat = 100_000_000_0
     num_processes = 16  # Number of processes (usually number of cores on your CPU)
     
     avr1 = parrallel_execution(repeat, num_processes, throwing_coinsE1)
@@ -243,8 +243,8 @@ if __name__ == '__main__':
     print(f"Average of first: {avr1}")
     print(f"Average of second: {avr2}")
     print(f"Average of both: {avr12}")
-    print(f"Dispersion of first: {dis1}")
-    print(f"Dispersion of second: {dis2}")
+    # print(f"Dispersion of first: {dis1}")
+    # print(f"Dispersion of second: {dis2}")
     print(f"Dispersion of first math: {mathDispersion1}")
     print(f"Dispersion of second math: {mathDispersion2}")
     print(f"Correlation coefficient: {qxy}")
