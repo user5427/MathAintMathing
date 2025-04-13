@@ -9,7 +9,7 @@ from tqdm import tqdm
 m = 7
 n = 9
 k1 = 4
-k2 = 7
+k2 = 6
 
 coins = []
 
@@ -214,7 +214,7 @@ def parrallel_execution(repeat, num_processes, func):
 from functools import partial
 if __name__ == '__main__':
 
-    repeat = 100_000_000_0
+    repeat = 100_000_0
     num_processes = 16  # Number of processes (usually number of cores on your CPU)
     
     avr1 = parrallel_execution(repeat, num_processes, throwing_coinsE1)
@@ -245,6 +245,9 @@ if __name__ == '__main__':
     print(f"Average of both: {avr12}")
     # print(f"Dispersion of first: {dis1}")
     # print(f"Dispersion of second: {dis2}")
+    # THE SQUARE ROOT OF AVERAGE@!!!!
+    print(f"Average of first sqrt: {avr1sqrt}")
+    print(f"Average of second sqrt: {avr2sqrt}")
     print(f"Dispersion of first math: {mathDispersion1}")
     print(f"Dispersion of second math: {mathDispersion2}")
     print(f"Correlation coefficient: {qxy}")
