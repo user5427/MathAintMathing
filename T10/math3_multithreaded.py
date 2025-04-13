@@ -6,10 +6,10 @@ from multiprocessing import Pool
 
 from tqdm import tqdm
 
-m = 7
-n = 9
-k1 = 4
-k2 = 6
+m = 9
+n = 6
+k1 = 3
+k2 = 4
 
 coins = []
 
@@ -214,14 +214,15 @@ def parrallel_execution(repeat, num_processes, func):
 from functools import partial
 if __name__ == '__main__':
 
-    repeat = 100_000_0
+    repeat = 100_000
     num_processes = 16  # Number of processes (usually number of cores on your CPU)
     
     avr1 = parrallel_execution(repeat, num_processes, throwing_coinsE1)
     avr2 = parrallel_execution(repeat, num_processes, throwing_coinsE2)
     
-    dispersionWithAvr1 = partial(dispersionD1, avr1)
-    dispersionWithAvr2 = partial(dispersionD2, avr2)
+    
+    # dispersionWithAvr1 = partial(dispersionD1, avr1)
+    # dispersionWithAvr2 = partial(dispersionD2, avr2)
     
     # dis1 = parrallel_execution(repeat, num_processes, dispersionWithAvr1)
     # dis2 = parrallel_execution(repeat, num_processes, dispersionWithAvr2)
@@ -239,13 +240,13 @@ if __name__ == '__main__':
     import os
     os.system('cls' if os.name == 'nt' else 'clear')
     
-    # print all the results
+    # # print all the results
     print(f"Average of first: {avr1}")
     print(f"Average of second: {avr2}")
     print(f"Average of both: {avr12}")
-    # print(f"Dispersion of first: {dis1}")
-    # print(f"Dispersion of second: {dis2}")
-    # THE SQUARE ROOT OF AVERAGE@!!!!
+    # # print(f"Dispersion of first: {dis1}")
+    # # print(f"Dispersion of second: {dis2}")
+    # # THE SQUARE ROOT OF AVERAGE@!!!!
     print(f"Average of first sqrt: {avr1sqrt}")
     print(f"Average of second sqrt: {avr2sqrt}")
     print(f"Dispersion of first math: {mathDispersion1}")
