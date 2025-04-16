@@ -112,7 +112,7 @@ def verify_with_simulation(m, n, k1, k2, num_simulations=10000):
     }
 
 # Parameters
-m, n, k1, k2 = 7, 9, 4, 7
+m, n, k1, k2 = 7,9,4,7
 
 # Calculate theoretical results
 results = calculate_correlation_coefficient(m, n, k1, k2)

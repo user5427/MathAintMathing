@@ -6,7 +6,7 @@ from multiprocessing import Pool
 
 from tqdm import tqdm
 
-p = 0.40
+p = 0.65
 
 def birds():
     # we need male and female bird so we need one of each
@@ -47,10 +47,18 @@ def parrallel_execution(repeat, num_processes, func):
 
 if __name__ == '__main__':
 
-    repeat = 500_000
+    repeat = 500_00000
     num_processes = 16  # Number of processes (usually number of cores on your CPU)
     
+    # averages = []
+    # for i in range(100):
+    #     avr1 = parrallel_execution(repeat, num_processes, birds)
+    #     averages.append(avr1)
+        
+    # avr1 = sum(averages) / len(averages)
+    
     avr1 = parrallel_execution(repeat, num_processes, birds)
+    
     
     import os
     os.system('cls' if os.name == 'nt' else 'clear')
