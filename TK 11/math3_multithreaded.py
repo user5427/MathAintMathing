@@ -47,7 +47,7 @@ def parrallel_execution(repeat, num_processes, func):
 
 if __name__ == '__main__':
 
-    repeat = 1_000_000_00
+    repeat = 1_000_000_000
     num_processes = 16  # Number of processes (usually number of cores on your CPU)
     
     res1 = parrallel_execution(repeat, num_processes, kartotinis)

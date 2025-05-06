@@ -32,13 +32,17 @@ def balls():
         # if both are white then return 1 else return 0
         firstBall = copyBallList.pop(int(random() * len(copyBallList)))
         secondBall = copyBallList.pop(int(random() * len(copyBallList)))
-        if firstBall == 'b' and secondBall == 'b':
+        if firstBall != 'b':
+            return 0, -1
+        if secondBall == 'b':
             return 1, 0
     else:
         copyBallList = secondBox.copy()
         firstBall = copyBallList.pop(int(random() * len(copyBallList)))
         secondBall = copyBallList.pop(int(random() * len(copyBallList)))
-        if firstBall == 'b' and secondBall == 'b':
+        if firstBall != 'b':
+            return 0, -1
+        if secondBall == 'b':
             return 1, 0
     return 0, 0
     
