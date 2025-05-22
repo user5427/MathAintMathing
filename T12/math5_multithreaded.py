@@ -49,7 +49,7 @@ def parrallel_execution(repeat, num_processes, func):
 
 if __name__ == '__main__':
 
-    repeat = 100_000_0
+    repeat = 100_000_0000
     num_processes = 16  # Number of processes (usually number of cores on your CPU)
     
     avr1 = parrallel_execution(repeat, num_processes, antSpeedrace)
