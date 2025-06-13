@@ -1,0 +1,2 @@
+1. Kas yra imties variacinė eilutė? Paaiškinkite pavyzdžiu.
+Duomenys isrikiuoti didėjimo tvarka, nuo mažiausio iki didžiausio. Pavyzdžiui, turime duomenis: 3, 5, 7, 2, 4. Išrikiuojame juos: 2, 3, 4, 5, 7. Tai yra imties variacinė eilutė.
